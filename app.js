@@ -22,34 +22,36 @@ getData(1, () => {
 })
 
 
+let isPizza = true;
 
-// understanding of promise concept
-let isPizza = true
-const makePizza = (makeDoughtFunc) => {
-    if(isPizza){
-    setTimeout(()=>{
-        console.log('Cheese is here...');
-        makeDoughtFunc(bakePizza)
-    },2000)
-}else{
-    console.log('SOrry pizza is not found');
-}
-}
-const makeDought = (bakePizzaFunc) =>{
-    setTimeout(() =>{
-        console.log('Pizza Dought is here');
-        bakePizzaFunc()
-    }, 2000)
+const makePizza = (makeDoughtFunc, finalOrder) => {
+  if (isPizza) {
+    setTimeout(() => {
+      console.log("Cheese is here...");
+
+      makeDoughtFunc(finalOrder);
+
+    }, 2000);
+  } else {
+    console.log("SOrry pizza is not found");
+  }
+};
+
+makePizza(
+    (finalOrder) => {
+    setTimeout(() => {
+        console.log("pizza dought is ready");
+        finalOrder()
+    }, 1000);
+}, 
+
+function finalOrder(){
+    setTimeout(() => {
+    console.log('pizza is ready');
+}, 4000);
 }
 
-const bakePizza = () =>{
-    setTimeout(() =>{
-        console.log('Pizza is ready...');
-    }, 2000)
-}
-makePizza(makeDought)
-
-
+);
 
 // const getData = (id, nextFunc) =>{
 // //     setTimeout(() => {
@@ -96,3 +98,5 @@ makePizza(makeDought)
 //   }, 1000);
 // }
 // );
+
+
