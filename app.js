@@ -100,3 +100,40 @@
 // );
 
 
+const bookCar = () =>{
+  return new Promise((resolve, reject)=>{
+    console.log('car booking start...');
+    setTimeout(()=>{
+      resolve('Car order booked')
+    },2000)
+  })
+}
+bookCar()
+.then((res)=>{
+  console.log(res);
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      resolve("Now start car carefully")
+    },1000)
+})
+})
+.then((res)=>{
+  console.log(res);
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      resolve('Now go to restaurant in car')
+    },2000)
+  })
+})
+.then((res)=>{
+  console.log(res);
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      resolve('Now eat food')
+    },700)
+  })
+})
+.then((res)=> console.log(res))
+.catch((err)=>{
+  console.log(err);
+})
