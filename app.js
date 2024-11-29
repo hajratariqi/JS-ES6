@@ -193,3 +193,14 @@ let double = createMultiplier(2)
 let triple = createMultiplier(3)
 console.log(double());
 console.log(triple());
+
+// question 3 
+const myObj = {name: 'hajra', age: '16'}
+const destructureFunc = ({name ,age , country = 'pakistan', city = 'karachi'}) =>{
+    console.log(name);
+    console.log(age);
+    console.log(country);
+    console.log(city);
+    
+}
+destructureFunc(myObj)
