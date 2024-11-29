@@ -179,3 +179,17 @@ const constScope = () =>{
     }
 }
 constScope()
+
+// question 2
+const createMultiplier = (multiplier) =>{
+    return () =>{
+        console.log(multiplier * 3);
+        return () =>{
+            console.log(multiplier);
+        }
+    }
+}
+let double = createMultiplier(2)
+let triple = createMultiplier(3)
+console.log(double());
+console.log(triple());
