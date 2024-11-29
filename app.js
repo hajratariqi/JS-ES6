@@ -100,40 +100,82 @@
 // );
 
 
-const bookCar = () =>{
-  return new Promise((resolve, reject)=>{
-    console.log('car booking start...');
-    setTimeout(()=>{
-      resolve('Car order booked')
-    },2000)
-  })
+// const bookCar = () =>{
+//   return new Promise((resolve, reject)=>{
+//     console.log('car booking start...');
+//     setTimeout(()=>{
+//       resolve('Car order booked')
+//     },2000)
+//   })
+// }
+// bookCar()
+// .then((res)=>{
+//   console.log(res);
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//       resolve("Now start car carefully")
+//     },1000)
+// })
+// })
+// .then((res)=>{
+//   console.log(res);
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//       resolve('Now go to restaurant in car')
+//     },2000)
+//   })
+// })
+// .then((res)=>{
+//   console.log(res);
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//       resolve('Now eat food')
+//     },700)
+//   })
+// })
+// .then((res)=> console.log(res))
+// .catch((err)=>{
+//   console.log(err);
+// })
+
+
+// question 1
+// var  scope
+const varScope = () =>{
+    var num = 2
+    if(num === 2){
+        var newNum = 5
+    }else{
+        console.log(`${num} is not equal to 2`);
+    }
+    // "var" ignores block scope, so newNum is accessible here.
+    console.log(`${newNum} The variable declared with var is accessible outside the block since var has function or global scope`);   
 }
-bookCar()
-.then((res)=>{
-  console.log(res);
-  return new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-      resolve("Now start car carefully")
-    },1000)
-})
-})
-.then((res)=>{
-  console.log(res);
-  return new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-      resolve('Now go to restaurant in car')
-    },2000)
-  })
-})
-.then((res)=>{
-  console.log(res);
-  return new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-      resolve('Now eat food')
-    },700)
-  })
-})
-.then((res)=> console.log(res))
-.catch((err)=>{
-  console.log(err);
-})
+varScope()
+
+// question 2
+// let  scope
+const letScope = () =>{
+    let num = 5
+    if(num === 5){
+        let newNum = 5
+    // "Let" just availible at there scope, so newNum is accessible here.
+        console.log(`${newNum} Let: The variable declared with let is accessible only within the block because let has block scope.`);   
+    }else{
+        console.log(`${num} is not equal to 2`);
+    }
+}
+letScope()
+
+// question 3
+// const scope
+const constScope = () =>{
+    const num = 3
+    if(num === 3){
+        const newNum = 5
+        console.log(`${newNum} Const: The variable declared with 'const' is block-scoped like 'let', but its value cannot be reassigned after being declared`);   
+    }else{
+        console.log(`${num} is not equal to 2`);
+    }
+}
+constScope()
