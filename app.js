@@ -212,3 +212,15 @@ const calculateTotal = (price, ...discount) =>{
     
 }
 console.log(calculateTotal(400, 20, 30, 10))
+
+// question 5
+const fetchData = () =>{
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve("Data received!")
+        },2000)        
+    })
+}
+fetchData()
+.then((res) => console.log(res))
+.catch((err) => console.log(err))
