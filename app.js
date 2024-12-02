@@ -288,3 +288,16 @@ const checkEvenOrOdd = (num) =>{
 }
 checkEvenOrOdd(7)
 checkEvenOrOdd(6)
+
+
+const user = {
+    name: 'hajra',
+    // address:{
+    //     city: 'karachi'
+    // }
+}
+
+const logCity = () =>{
+    console.log(user.address?.city ? 'found': 'not found');
+}
+logCity()
