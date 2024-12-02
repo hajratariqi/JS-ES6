@@ -207,20 +207,84 @@
 
 
 // question 4
-const calculateTotal = (price, ...discount) =>{
-    return  discount.reduce((previousValue, currentValue)=> previousValue - currentValue ,price)
+// const calculateTotal = (price, ...discount) =>{
+//     return  discount.reduce((previousValue, currentValue)=> previousValue - currentValue ,price)
     
-}
-console.log(calculateTotal(400, 20, 30, 10))
+// }
+// console.log(calculateTotal(400, 20, 30, 10))
 
-// question 5
-const fetchData = () =>{
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            resolve("Data received!")
-        },2000)        
-    })
+// // // question 5
+// // const fetchData = () =>{
+// //     return new Promise((resolve, reject)=>{
+// //         setTimeout(()=>{
+// //             resolve("Data received!")
+// //         },2000)        
+// //     })
+// // }
+// // fetchData()
+// // .then((res) => console.log(res))
+// // .catch((err) => console.log(err))
+
+
+// const fetchCalcu = async (cbFunc) =>{
+//     await cbFunc()
+// }
+
+// const add = (num1, num2) =>{
+//     return new Promise((resolve) => {
+//         console.log('Adding....');
+//         setTimeout(()=>{
+//             console.log(num1 + num2);
+//             resolve()
+//         },1000)
+// });
+// }
+
+// const sub = (num1, num2) =>{
+//     return new Promise((resolve) => {
+//     console.log('Sub....');
+//     setTimeout(()=>{
+//     console.log(num1 - num2);
+//     resolve()
+// },2000)
+// });
+// }
+
+// const mainWrapper = async () =>{
+//  await fetchCalcu(() => add(5, 3))
+//  await fetchCalcu(() => sub(5, 3))
+// }
+// mainWrapper()
+
+
+// const exponentiation = (num1 , num2) =>{
+//    return num1 ** num2
+// }
+// let result = exponentiation(4, 2);
+// console.log(result);
+
+
+
+class Animal{
+    constructor(name, species){
+    this.name = name
+    this.species = species
+    }
+    speak(){
+         return `${this.name} says ${this.species}`
+    }
 }
-fetchData()
-.then((res) => console.log(res))
-.catch((err) => console.log(err))
+let cat = new Animal('cat', 'Persian')
+let dog = new Animal('dog', 'ranbool')
+
+    console.log(cat.speak());
+    console.log(dog.speak());
+
+
+
+const checkEvenOrOdd = (num) =>{
+    console.log(num % 2, 'this is answer');   
+    return num % 2 === 0 ? 'even' : 'odd'
+}
+checkEvenOrOdd(7)
+checkEvenOrOdd(6)
